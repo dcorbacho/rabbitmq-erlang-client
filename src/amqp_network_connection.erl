@@ -372,5 +372,5 @@ obtain() ->
         _     -> file_handle_cache:obtain()
     end.
 
-get_reason(#'connection.close'{reply_code = ErrCode, reply_text = Message}) ->
-    {?PROTOCOL:amqp_exception(ErrCode), binary_to_list(Message)}.
+get_reason(#'connection.close'{reply_code = ErrCode}) ->
+    ?PROTOCOL:amqp_exception(ErrCode).

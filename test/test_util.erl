@@ -272,7 +272,7 @@ direct_no_vhost_test() ->
     ok.
 
 network_no_vhost_test() ->
-    {error, {not_allowed, _}} =
+    {error, not_allowed} =
         new_connection(just_network, [{username, <<"guest">>},
                                       {virtual_host, <<"/noexist">>}]),
     ok.
